@@ -40,27 +40,42 @@ var Influencers = {
     p.classList.add("current");
     c.classList.remove("current");
 
-    switch(animationDirection) {
-      case "left":
-        p.classList.add("from-right");
-        c.classList.add("to-left");
-        break;
-      case "right":
-        p.classList.add("from-left");
-        c.classList.add("to-right");
-        break;
-    }
+    requestAnimationFrame(function() {
+      switch(animationDirection) {
+        case "left":
+          p.classList.add("from-right");
+          c.classList.add("to-left");
+          break;
+        case "right":
+          p.classList.add("from-left");
+          c.classList.add("to-right");
+          break;
+      }
 
-    window.setTimeout(function() {
-      c.classList.remove("to-left", "to-right");
-      p.classList.remove("from-left", "from-right");
-    }, 500);
-  },
-
-  setup: function() {
-    document.querySelector(".arrow-nav[data-direction=next]").addEventListener("click", this.next.bind(this));
-    document.querySelector(".arrow-nav[data-direction=previous]").addEventListener("click", this.prev.bind(this));
+      setTimeout(function() {
+        c.classList.remove("to-left", "to-right");
+        p.classList.remove("from-left", "from-right");
+      }, 500);
+    });
   }
 }
 
-Influencers.setup();
+/**
+ * Arrow setup
+ */
+
+var arrows = document.querySelectorAll(".arrow-nav");
+for(let i = 0; i < 2; i++) {
+  arrows[i].addEventListener("click", function(e) {
+    switch(this.dataset.direction) {
+      case "previous":
+        Influencers.prev();
+        break;
+      case "next":
+        Influencers.next();
+        break;
+    }
+  });
+}
+
+
