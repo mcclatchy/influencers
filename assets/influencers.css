@@ -1,0 +1,205 @@
+/**
+ * Influencers landing page
+ */
+
+body {
+  margin: 0;
+}
+
+header, footer {
+  background-color: #145288;
+  height: 60px;
+  position: relative;
+  z-index: 4;
+}
+
+/**
+ * Arrows
+ */
+
+.arrow-nav {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.4;
+  z-index: 3;
+}
+
+.arrow-nav:hover {
+  background-color: #ddd;
+}
+
+.arrow-nav[data-direction=previous] img {
+  transform: rotate(180deg);
+}
+
+.arrow-nav[data-direction=next] {
+  right: 0;
+}
+
+/**
+ * Individual Influencers
+ */
+
+.influencer-window {
+  position: relative;
+}
+
+.influencer {
+  display: flex;
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  visibility: hidden;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+.influencer.current {
+  position: relative;
+  visibility: visible;
+  z-index: 2;
+}
+
+.influencer:not(.current) {
+  max-height: 80vh;
+}
+
+.influencer.to-left, .influencer.to-right {
+  visibility: visible;
+}
+
+/**
+ * Image
+ */
+
+.art {
+  flex: 3;
+  position: relative;
+  -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@media (max-width: 767px) {
+  .art {
+    height: 400px;
+    margin-bottom: 15px;
+  }
+}
+
+.art img {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 20vw;
+  width: 80vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 30% 20%;
+  filter: grayscale(80%) contrast(120%) brightness(120%);
+  opacity: 0;
+  transition: opacity 500ms;
+  transition-delay: 200ms;
+}
+
+/**
+ * Influencer summary
+ */
+
+.bio {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px 0 75px;
+	box-sizing: border-box;
+  min-width: 350px;
+}
+
+.deets {
+  font: 14px/1.4em "McClatchy Sans";
+  color: #222;
+}
+
+.name {
+  font: 300 32px/1em "McClatchy Sans";
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+.name small {
+  display: block;
+  font-size: .6em;
+}
+
+.impact {
+  background-color: #222;
+	color: white;
+  padding: 10px;
+  font: 15px/1.2em "McClatchy Sans"
+}
+
+/**
+ * Transitions
+ */
+
+.influencer.from-left .bio {
+  animation: move-from-left 300ms ease both;
+}
+
+.influencer.from-right .bio {
+  animation: move-from-right 300ms ease both;
+}
+
+.influencer.to-left .bio {
+  animation: move-to-left 300ms ease both;
+}
+
+.influencer.to-right .bio {
+  animation: move-to-right 300ms ease both;
+}
+
+.current .art img {
+  opacity: 1;
+}
+
+/**
+ * Animations
+ */
+
+@keyframes move-from-left {
+  from {
+    transform: translateX(-30vw);
+    opacity: 0;
+  }
+}
+
+@keyframes move-from-right {
+  from {
+    transform: translateX(30vw);
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+}
+
+@keyframes move-to-left {
+  to {
+    transform: translateX(-30vw);
+    opacity: 0;
+  }
+}
+
+@keyframes move-to-right {
+  to {
+    transform: translateX(30vw);
+    opacity: 0;
+  }
+}

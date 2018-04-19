@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Influencer test page</title>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <link rel="stylesheet" href="https://mcclatchy.github.io/fuse/css/fonts.css">
+    <link rel="stylesheet" href="assets/influencers.css">
+  </head>
+
+  <body>
+    <header></header>
+
+    <!-- <div class="influencers-wrapper"> -->
+			<!-- <div class="backdrop"></div> -->
+      <div class="influencer-window">
+        {{ range $k, $v := . }}
+				<div class="influencer {{ if eq $k 0 }} current {{end}}">
+          <div class="bio">
+						<div class="deets">
+							<h1 class="name"><small>{{ $v.profession }}</small> {{ $v.first }} {{ $v.last }}</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra venenatis consectetur. Mauris efficitur consectetur ante. Morbi justo mi, sagittis suscipit metus ac, tempus volutpat arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed volutpat enim ut tellus sodales faucibus. Proin dolor enim, laoreet pretium eleifend vel, ultricies at ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada fermentum fringilla. Fusce a dui mauris. Aliquam malesuada tristique lacus eget faucibus. Ut viverra nulla vel purus vulputate, sit amet condimentum dolor cursus. Curabitur tempor turpis a dui luctus eleifend. Sed rhoncus, neque ac fermentum hendrerit, purus metus hendrerit turpis, a venenatis est nunc a libero. Etiam dictum pulvinar eros non cursus. Sed volutpat neque nec leo ornare ultricies. Duis id sem pretium eros varius lobortis ornare eget sapien.</p>
+							<p>Fusce pulvinar dictum lacus ut aliquet. Maecenas ac tellus in arcu scelerisque gravida in vitae nunc. Suspendisse sagittis sollicitudin nibh ac interdum. Proin vitae ligula quis dui interdum tempus vel et urna. Mauris ac porta magna. Duis vitae libero eleifend, convallis nulla et, efficitur lorem. Mauris ac est orci. Sed convallis ex a arcu porttitor fringilla. Quisque purus tellus, porttitor eu libero vel, tristique congue elit.</p>
+						</div>
+          </div>
+          <div class="art">
+						<!-- <div class="fixed-panel"> -->
+							{{ if eq $k 1 }}
+							<img src="assets/dicaprio.jpg" />
+							{{ else if eq $k 2 }}
+							<img src="assets/random.jpg" />
+							{{ else }}
+							<img src="assets/walken.jpg" />
+							{{ end }}
+						<!-- </div> -->
+          </div>
+        </div>
+        {{ end }}
+      </div>
+			<div class="arrow-nav" data-direction="previous">
+				<img src="assets/chev-right.png">
+			</div>
+			<div class="arrow-nav" data-direction="next">
+				<img src="assets/chev-right.png">
+			</div>
+    <!-- </div> -->
+
+		<script src="assets/influencers.js"></script>
+
+    <footer></footer>
+  </body>
+</html>
