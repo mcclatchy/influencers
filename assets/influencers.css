@@ -21,13 +21,17 @@ header, footer {
   position: fixed;
   top: 0;
   height: 100%;
-  width: 40px;
+  width: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   opacity: 0.4;
   z-index: 3;
+}
+
+.arrow-nav img {
+  height: 80px;
 }
 
 .arrow-nav:hover {
@@ -135,6 +139,10 @@ header, footer {
 @media (min-width: 768px) {
   .arrow-nav {
     width: 65px;
+  }
+
+  .arrow-nav img {
+    height: auto;
   }
 
   .influencer {
