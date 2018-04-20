@@ -37,8 +37,8 @@ var Influencers = {
     let c = this.current;
     let p = this.people[i];
 
-    p.classList.add("current");
     c.classList.remove("current");
+    p.classList.add("current");
 
     requestAnimationFrame(function() {
       switch(animationDirection) {

@@ -20,11 +20,6 @@
 		<div class="influencer-window">
 			{{ range $k, $v := . }}
 			<div class="influencer {{ if eq $k 0 }} current {{end}}">
-				<div class="bio">
-					<h1 class="name"><small>{{ $v.profession }}</small> {{ $v.first }} {{ $v.last }}</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra venenatis consectetur. Mauris efficitur consectetur ante. Morbi justo mi, sagittis suscipit metus ac, tempus volutpat arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed volutpat enim ut tellus sodales faucibus. Proin dolor enim, laoreet pretium eleifend vel, ultricies at ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada fermentum fringilla. Fusce a dui mauris. Aliquam malesuada tristique lacus eget faucibus. Ut viverra nulla vel purus vulputate, sit amet condimentum dolor cursus. Curabitur tempor turpis a dui luctus eleifend. Sed rhoncus, neque ac fermentum hendrerit, purus metus hendrerit turpis, a venenatis est nunc a libero. Etiam dictum pulvinar eros non cursus. Sed volutpat neque nec leo ornare ultricies. Duis id sem pretium eros varius lobortis ornare eget sapien.</p>
-					<p>Fusce pulvinar dictum lacus ut aliquet. Maecenas ac tellus in arcu scelerisque gravida in vitae nunc. Suspendisse sagittis sollicitudin nibh ac interdum. Proin vitae ligula quis dui interdum tempus vel et urna. Mauris ac porta magna. Duis vitae libero eleifend, convallis nulla et, efficitur lorem. Mauris ac est orci. Sed convallis ex a arcu porttitor fringilla. Quisque purus tellus, porttitor eu libero vel, tristique congue elit.</p>
-				</div>
 				<div class="art">
 					{{ if eq $k 1 }}
 					<img src="assets/dicaprio.jpg" />
@@ -33,6 +28,11 @@
 					{{ else }}
 					<img src="assets/walken.jpg" />
 					{{ end }}
+				</div>
+				<div class="bio">
+					<h1 class="name"><small>{{ $v.profession }}</small> {{ $v.first }} {{ $v.last }}</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra venenatis consectetur. Mauris efficitur consectetur ante. Morbi justo mi, sagittis suscipit metus ac, tempus volutpat arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed volutpat enim ut tellus sodales faucibus. Proin dolor enim, laoreet pretium eleifend vel, ultricies at ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada fermentum fringilla. Fusce a dui mauris. Aliquam malesuada tristique lacus eget faucibus. Ut viverra nulla vel purus vulputate, sit amet condimentum dolor cursus. Curabitur tempor turpis a dui luctus eleifend. Sed rhoncus, neque ac fermentum hendrerit, purus metus hendrerit turpis, a venenatis est nunc a libero. Etiam dictum pulvinar eros non cursus. Sed volutpat neque nec leo ornare ultricies. Duis id sem pretium eros varius lobortis ornare eget sapien.</p>
+					<p>Fusce pulvinar dictum lacus ut aliquet. Maecenas ac tellus in arcu scelerisque gravida in vitae nunc. Suspendisse sagittis sollicitudin nibh ac interdum. Proin vitae ligula quis dui interdum tempus vel et urna. Mauris ac porta magna. Duis vitae libero eleifend, convallis nulla et, efficitur lorem. Mauris ac est orci. Sed convallis ex a arcu porttitor fringilla. Quisque purus tellus, porttitor eu libero vel, tristique congue elit.</p>
 				</div>
 			</div>
 			{{ end }}
