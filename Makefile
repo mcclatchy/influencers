@@ -1,11 +1,11 @@
-template: public
-	./bin/loopit -data data/names.json template.html > public/index.html
+west: public
+	loopit -data data/west.json template.html > public/index.html
 
 public:
 	mkdir public
 	ln -s ../assets public/
 
-server: template 
+server: west 
 	./bin/webserver -d public
 
 clean:

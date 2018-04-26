@@ -1,0 +1,81 @@
+/**
+ * Influencer Plan B
+ */
+
+body {
+  margin: 0;
+}
+
+header, footer {
+  background-color: #145288;
+  height: 60px;
+}
+
+/**
+ * Image
+ */
+
+.art {
+  position: relative;
+  background-color: #ddd;
+}
+
+.art img {
+  display: block;
+  width: 100%;
+  filter: saturate(10%) contrast(1.4) brightness(1.1);
+}
+
+@supports (object-fit: cover) {
+  .art {
+    height: 70vh;
+  }
+
+  .art img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+  }
+}
+
+@supports (clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)) {
+  .art {
+    clip: rect(0,auto,auto,0);
+    clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%);
+  }
+
+  .art img {
+    position: fixed;
+  }
+}
+
+/**
+ * Bio
+ */
+
+.bio {
+  font: 14px/1.4em "McClatchy Sans";
+  color: #222;
+  padding: 1rem 2rem 2rem;
+  min-height: 40vh;
+}
+
+.name {
+  font: 300 32px/1em "McClatchy Sans";
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  margin-bottom: 5px;
+}
+
+.title p {
+  display: block;
+  font: 300 13px/1.4em "McClatchy Sans Cond";
+  margin: 0;
+}
+
+.bio p {
+  max-width: 400px;
+}
