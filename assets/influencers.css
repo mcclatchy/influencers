@@ -40,7 +40,8 @@ header, footer {
   height: 100%;
   object-fit: cover;
   object-position: 50% 20%;
-  filter: grayscale(80%) contrast(120%) brightness(120%);
+  /* filter: grayscale(80%) contrast(120%) brightness(120%); */
+  filter: sepia(100%) hue-rotate(90deg) brightness(1.1) contrast(1.4);
 }
 
 /**
