@@ -11,24 +11,29 @@
     <meta name="mobile-web-app-capable" content="yes">
     
     <link rel="stylesheet" href="https://mcclatchy.github.io/fuse/css/fonts.css">
-    <link rel="stylesheet" href="assets/magic-carpet.css">
+    <link rel="stylesheet" href="assets/influencers.css">
   </head>
 
   <body>
     <header></header>
 
-		{{ range . }}
-		<div class="influencer">
-			<div class="art">
-				<img src="assets/600/{{ lower .first | trim " " }}-{{ lower .last | trim " " }}.jpg">
+		<div class="grid">
+			{{ range . }}
+			<div class="influencer">
+				<div class="art">
+					<img src="assets/600/{{ lower .first | trim " " | replace " " "-" | replace "." "" }}-{{ lower .last | trim " " }}.jpg"
+						srcset="assets/1200/{{ lower .first | trim " " | replace " " "-" | replace "." "" }}-{{ lower .last | trim " " }}.jpg 2x">
+				</div>
+				<div class="bio">
+					<h1 class="name">{{ .first }} {{ .last }}</h1>
+					<div class="title">{{ markdown .title }}</div>
+					<div class="answer">{{ markdown .answer }}</div>
+				</div>
 			</div>
-			<div class="bio">
-				<h1 class="name">{{ .first }} {{ .last }}</h1>
-				<div class="title">{{ markdown .title }}</div>
-				{{ markdown .answer }}
-			</div>
+			{{ end }}
+
+			<script src="assets/influencers.js"></script>
 		</div>
-		{{ end }}
 
     <footer></footer>
   </body>

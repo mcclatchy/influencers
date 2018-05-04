@@ -1,0 +1,107 @@
+/**
+ * Influencers landing page
+ */
+
+body {
+  margin: 0;
+  background-color: #ddd;
+}
+
+header, footer {
+  background-color: #145288;
+  height: 60px;
+  position: relative;
+  z-index: 4;
+}
+
+.influencer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 15px 0;
+  background-color: white;
+}
+
+/**
+ * Image
+ */
+
+.art {
+  position: relative;
+  padding-top: 56.25%;
+  background-color: #efefef;
+}
+
+.art img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  /* filter: grayscale(80%) contrast(120%) brightness(120%); */
+  filter: sepia(100%) hue-rotate(90deg) brightness(1.1) contrast(1.4);
+}
+
+/**
+ * Influencer summary
+ */
+
+.bio {
+  flex: 1;
+  padding: 15px 50px;
+	box-sizing: border-box;
+  min-width: 350px;
+  font: 14px/1.4em "McClatchy Sans";
+  color: #222;
+  will-change: transform;
+}
+
+.name {
+  font: 300 32px/1em "McClatchy Sans";
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+.name small {
+  display: block;
+  font-size: .6em;
+}
+
+/**
+ * iPad and up
+ */
+
+@media (min-width: 768px) {
+  .influencer {
+    flex-direction: row;
+  }
+
+  .art {
+    flex: 3;
+    padding-top: 0;
+    -webkit-clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+  }
+
+  .art img {
+    object-position: 30% 20%;
+  }
+
+  .bio {
+    flex: 1;
+    padding: 0px 75px 0px 15px;
+  }
+
+  .influencer:nth-child(even) .art {
+    order: 2;
+    -webkit-clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .influencer:nth-child(even) .bio {
+    order: 1;
+    padding: 0px 15px 0px 75px;
+  }
+}
