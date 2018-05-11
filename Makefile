@@ -1,15 +1,23 @@
+all: midwest east carolinas west index
+
+index: public
+	cp index.html public/index.html
+
+midwest: public
+	loopit -data data/midwest.json template.html > public/midwest.html
+
+east: public
+	loopit -data data/east.json template.html > public/east.html
+
 carolinas: public
-	loopit -data data/carolinas.json template.html > public/index.html
+	loopit -data data/carolinas.json template.html > public/carolinas.html
 
 west: public
-	loopit -data data/west.json template.html > public/index.html
+	loopit -data data/west.json template.html > public/west.html
 
 public:
 	mkdir public
 	ln -s ../assets public/
-
-server: west 
-	./bin/webserver -d public
 
 clean:
 	rm -rf public

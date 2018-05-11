@@ -7,9 +7,43 @@ body {
   background-color: #f4f4f4;
 }
 
-header, footer {
-  background-color: #145288;
-  height: 60px;
+#masthead-container {
+	margin-bottom: 0;
+}
+
+#leaderboard-ad {
+	margin: 0;
+	padding: 0;
+}
+
+#leaderboard-ad .ad-widget:not(:empty) {
+  margin: 20px auto;
+}
+
+.container[role=main] {
+  width: 100%;
+  padding: 0;
+}
+
+.container[role=main] .row {
+  margin: 0;
+}
+
+.container[role=main] [class^=col-] {
+  padding: 0;
+}
+
+.container[role=main] + .container > .ad {
+  margin-bottom: 0;
+}
+
+.container[role=main] + .container > .ad > .ad-widget:not(:empty) {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#footer {
+  margin-top: 0;
 }
 
 /**
@@ -41,9 +75,10 @@ header, footer {
   }
 }
 
-@supports (clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)) {
+@supports (clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)) or (-webkit-clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)) {
   .art {
     clip: rect(0,auto,auto,0);
+    -webkit-clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%);
     clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%);
   }
 
@@ -162,12 +197,66 @@ header, footer {
 }
 
 .influencer-index {
-  background-color: #ddd;
-  min-height: 50vh;
+  background-color: #e4e4e4;
+}
+
+.influencer-index h1 {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.influencer-index .columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 900px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 500px) {
+  .influencer-index .columns {
+    display: block;
+  }
+}
+
+.influencer-index a {
+  padding: 12px 0px;
+  margin: 0px 12px;
+  display: flex;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #999;
+}
+
+.influencer-index .thumb {
+  width: 75px;
+  height: 75px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.influencer-index .thumb img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.influencer-index .details {
+  flex: 1;
+  padding: 0.5em 1em;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 60px;
+  justify-content: flex-end;
+}
+
+.influencer-index .name {
+  font: bold 14px/1em "McClatchy Sans";
+  margin-top: 0;
 }
 
 /**
@@ -190,7 +279,6 @@ header, footer {
     background-color: white;
     box-shadow: 0px 0px 2px #999;
     transition: opacity .2s ease-in, transform .3s ease-in;
-    will-change: transform;
   }
 
   .animate-in {
@@ -207,8 +295,7 @@ header, footer {
   }
 
   .art {
-    height: auto;
-    padding-top: 100%;
+    height: 40vw;
   }
 
   .art img {
@@ -218,14 +305,40 @@ header, footer {
   .bio {
     flex: 1;
   }
-
-  .answer {
-    /* text-align: center; */
-  }
 }
 
 @media (min-width: 1200px) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  .art {
+    height: 25vw;
+  }
+}
+
+/**
+ * Logo
+ */
+
+@keyframes fadein {
+  from { opacity: 0; }
+  50% { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#influencer-logo #map {
+  animation: fadein 4s ease;
+}
+
+#influencer-logo #the {
+  animation: fadein 1s ease;
+}
+
+#influencer-logo #series {
+  animation: fadein 3s ease;
+}
+
+#influencer-logo #influencer {
+  animation: fadein 2s ease;
 }
