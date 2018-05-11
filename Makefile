@@ -17,3 +17,8 @@ west: west.images
 	cd markets/$*/photos && mogrify -path ../../../static/img/$*/1200 \
 		-format 'jpg' -colorspace gray -brightness-contrast 3,20 -resize '1200x1200^' -quality 65 -strip * 
 	cd static/img/$*/1200 && mogrify -path ../600 -resize '600x600^' *
+
+sandbox:
+	hugo
+	mv /localhost/projects/sandbox/influencers /tmp/
+	mv public /localhost/projects/sandbox/influencers

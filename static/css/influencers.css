@@ -75,16 +75,29 @@ body {
   }
 }
 
-@supports (clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)) or (-webkit-clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)) {
-  .art {
-    clip: rect(0,auto,auto,0);
-    -webkit-clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%);
-    clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%);
-  }
+/* @supports (clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)) { */
+/*   .art { */
+/*     clip: rect(0,auto,auto,0); */
+/*     clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%); */
+/*   } */
 
-  .art img {
-    position: fixed;
-  }
+/*   .art img { */
+/*     position: fixed; */
+/*   } */
+/* } */
+
+/**
+ * Influencers
+ */
+
+.influencer {
+  background-color: white;
+  transition: opacity .2s ease-in, transform .3s ease-in;
+}
+
+.animate-in {
+  opacity: 0;
+  transform: translateY(50px);
 }
 
 /**

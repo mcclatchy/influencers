@@ -3,3 +3,4 @@ languageCode = "en-us"
 title = "The Influencer Series"
 
 disableKinds = ["section", "taxonomy", "RSS", "sitemap"]
+relativeURLs = true
