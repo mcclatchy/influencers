@@ -97,7 +97,7 @@ body {
 
 .animate-in {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(80px);
 }
 
 /**
@@ -273,7 +273,7 @@ body {
  * Desktop
  */
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .grid {
     display: grid;
     grid-gap: 30px;
@@ -288,13 +288,13 @@ body {
     flex-direction: column;
     background-color: white;
     box-shadow: 0px 0px 2px #999;
-    transition: opacity .2s ease-in, transform .3s ease-in;
+    /* transition: opacity .2s ease-in, transform .3s ease-in; */
   }
 
-  .animate-in {
-    opacity: 0;
-    transform: translateY(50px);
-  }
+  /* .animate-in { */
+  /*   opacity: 0; */
+  /*   transform: translateY(50px); */
+  /* } */
 
   .influencer:nth-child(2n) {
     transition-delay: 100ms;

@@ -20,5 +20,6 @@ west: west.images
 
 sandbox:
 	hugo
+	rm -rf /tmp/influencers
 	mv /localhost/projects/sandbox/influencers /tmp/
 	mv public /localhost/projects/sandbox/influencers
