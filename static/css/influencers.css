@@ -279,14 +279,6 @@ body {
     box-shadow: 0px 0px 2px #999;
   }
 
-  .influencer:nth-child(2n) {
-    transition-delay: 100ms;
-  }
-
-  .influencer:nth-child(3n) {
-    transition-delay: 200ms;
-  }
-
   .art {
     height: 40vw;
   }
@@ -300,6 +292,12 @@ body {
   }
 }
 
+@media (min-width: 600px) and (max-width: 1199px) {
+  .influencer:nth-child(2n) {
+    transition-delay: 100ms;
+  }
+}
+
 @media (min-width: 1200px) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
@@ -307,6 +305,14 @@ body {
 
   .art {
     height: 25vw;
+  }
+
+  .influencer:nth-child(3n + 2) {
+    transition-delay: 100ms;
+  }
+  
+  .influencer:nth-child(3n + 3) {
+    transition-delay: 200ms;
   }
 }
 
