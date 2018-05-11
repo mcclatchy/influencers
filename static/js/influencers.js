@@ -1,4 +1,4 @@
-if(window.IntersectionObserver) {
+(function() {
   let influencers = document.querySelectorAll(".influencer");
 
   /**
@@ -17,14 +17,12 @@ if(window.IntersectionObserver) {
    * Animation on cards
    */
 
-  // if(window.matchMedia("(min-width: 800px)").matches) {
-    let cardObserver = new IntersectionObserver(handleCardIntersect);
+  let cardObserver = new IntersectionObserver(handleCardIntersect);
 
-    for(let i = 0, len = influencers.length; i < len; i++) {
-      influencers[i].classList.add("animate-in");
-      cardObserver.observe(influencers[i]);
-    }
-  // }
+  for(let i = 0, len = influencers.length; i < len; i++) {
+    influencers[i].classList.add("animate-in");
+    cardObserver.observe(influencers[i]);
+  }
 
   function handleCardIntersect(entries, observer) {
     entries.forEach(entry => {
@@ -36,4 +34,4 @@ if(window.IntersectionObserver) {
       }
     });
   }
-}
+})()

@@ -75,17 +75,6 @@ body {
   }
 }
 
-/* @supports (clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)) { */
-/*   .art { */
-/*     clip: rect(0,auto,auto,0); */
-/*     clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%); */
-/*   } */
-
-/*   .art img { */
-/*     position: fixed; */
-/*   } */
-/* } */
-
 /**
  * Influencers
  */
@@ -288,13 +277,7 @@ body {
     flex-direction: column;
     background-color: white;
     box-shadow: 0px 0px 2px #999;
-    /* transition: opacity .2s ease-in, transform .3s ease-in; */
   }
-
-  /* .animate-in { */
-  /*   opacity: 0; */
-  /*   transform: translateY(50px); */
-  /* } */
 
   .influencer:nth-child(2n) {
     transition-delay: 100ms;
