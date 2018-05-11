@@ -1,0 +1,5 @@
+baseURL = "http://projects.kansascity.com/sandbox/influencers/"
+languageCode = "en-us"
+title = "The Influencer Series"
+
+disableKinds = ["section", "taxonomy", "RSS", "sitemap"]
