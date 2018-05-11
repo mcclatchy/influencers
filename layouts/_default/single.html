@@ -659,7 +659,7 @@ mi.pageInfo.setConf({
 
 <div class="grid">
   {{ $t := .Type }}
-	{{ range index .Site.Data .Type }}
+	{{ range sort (index .Site.Data .Type) "last" }}
   {{ $path := printf "%s %s" .first .last | urlize }}
 	<div id="{{ $path }}" class="influencer">
 		<div class="art">
@@ -679,7 +679,7 @@ mi.pageInfo.setConf({
 <div class="influencer-index" id="influencer-index">
 	<h1>Index Title</h1>
 	<div class="columns">
-		{{ range index .Site.Data .Type }}
+		{{ range sort (index .Site.Data .Type) "last" }}
     {{ $path := printf "%s %s" .first .last | urlize }}
 		<a href="#{{ $path }}">
 			<div class="thumb">
