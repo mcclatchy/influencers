@@ -32,7 +32,6 @@
   }
 
   function handleQuickScroll() {
-    console.log("BAM");
     flag.classList.add("down");
     window.removeEventListener("scroll", handleQuickScroll);
   }
