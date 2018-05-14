@@ -7,7 +7,7 @@ body {
   background-color: #f4f4f4;
 }
 
-#masthead-container {
+#masthead-container, #footer {
 	margin-bottom: 0;
   background-color: #333 !important;
 }
@@ -90,8 +90,20 @@ body {
 }
 
 .animate-in {
-  opacity: 0;
   transform: translateY(80px);
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /**
@@ -173,8 +185,8 @@ body {
 
 .project-flag .index-icon {
   fill: white;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
 }
 
 .splash {
@@ -184,7 +196,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  min-height: calc(100vh - 110px);
+  min-height: calc(100vh - 52px);
+}
+
+@media (min-width: 768px) {
+  .splash {
+    min-height: calc(100vh - 110px);
+  }
 }
 
 .splash p {
@@ -253,7 +271,7 @@ body {
 }
 
 .influencer-index .name {
-  font: bold 14px/1em "McClatchy Sans";
+  font: 800 17px/1em "McClatchy Sans";
   margin-top: 0;
 }
 

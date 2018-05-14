@@ -1,5 +1,6 @@
 (function() {
   let influencers = document.querySelectorAll(".influencer");
+  let flag = document.querySelector(".project-flag");
 
   /**
    * Project Nav
@@ -8,23 +9,41 @@
   let navObserver = new IntersectionObserver(entries => {
     let sentinel = entries[0];
     let show = sentinel.isIntersecting || sentinel.boundingClientRect.y < 0;
-    document.querySelector(".project-flag").classList.toggle("down", show);
+    flag.classList.toggle("down", show);
   });
 
   navObserver.observe(influencers[3]);
+
+  // Location change additions
+  
+  function handleHashChange() {
+    let newTarget = document.querySelector(location.hash);
+    if(newTarget.classList.contains("influencer")) {
+      flag.classList.remove("down");
+
+      if(newTarget.classList.contains("animate-in")) {
+        window.scrollBy(0, -80);
+      }
+
+      setTimeout(function() {
+        window.addEventListener('scroll', handleQuickScroll);
+      }, 100);
+    }
+  }
+
+  function handleQuickScroll() {
+    console.log("BAM");
+    flag.classList.add("down");
+    window.removeEventListener("scroll", handleQuickScroll);
+  }
+
+  window.addEventListener("hashchange", handleHashChange);
 
   /**
    * Animation on cards
    */
 
-  let cardObserver = new IntersectionObserver(handleCardIntersect);
-
-  for(let i = 0, len = influencers.length; i < len; i++) {
-    influencers[i].classList.add("animate-in");
-    cardObserver.observe(influencers[i]);
-  }
-
-  function handleCardIntersect(entries, observer) {
+  let cardObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
         requestAnimationFrame(() => {
@@ -33,5 +52,10 @@
         });
       }
     });
+  });
+
+  for(let i = 0, len = influencers.length; i < len; i++) {
+    influencers[i].classList.add("animate-in");
+    cardObserver.observe(influencers[i]);
   }
 })()
