@@ -9,6 +9,11 @@ body {
 
 #masthead-container {
 	margin-bottom: 0;
+  background-color: #333 !important;
+}
+
+.navbar-toggle {
+  background-color: #555 !important;
 }
 
 #leaderboard-ad {
@@ -102,9 +107,7 @@ body {
 }
 
 .name {
-  font: 500 36px/1em "McClatchy Sans";
-  text-transform: uppercase;
-  letter-spacing: -0.04em;
+  font: 800 36px/1em "McClatchy Sans";
   margin-bottom: 5px;
 }
 
@@ -181,11 +184,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  min-height: calc(100vh - 60px);
-}
-
-.splash > svg {
-  width: 90%;
+  min-height: calc(100vh - 110px);
 }
 
 .splash p {
@@ -326,8 +325,21 @@ body {
   to { opacity: 1; }
 }
 
+#influencer-logo {
+  position: relative;
+  width: 90%;
+}
+
 #influencer-logo #map {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   animation: fadein 4s ease;
+}
+
+#influencer-logo svg {
+  position: relative;
 }
 
 #influencer-logo #the {
