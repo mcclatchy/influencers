@@ -670,7 +670,7 @@ mi.pageInfo.setConf({
 
 <div class="grid">
 	{{ range sort (index .Site.Data .Type) "last" }}
-  {{ $path := printf "%s %s" .first .last | urlize }}
+  {{ $path := replace (printf "%s %s" (trim .first " ") (trim .last " ")) "." "" | urlize }}
 	<div id="{{ $path }}" class="influencer">
 		<div class="art">
       <img src="/img/{{ $t }}/600/{{ $path }}.jpg"
@@ -690,7 +690,7 @@ mi.pageInfo.setConf({
 	<h1></h1>
 	<div class="columns">
 		{{ range sort (index .Site.Data .Type) "last" }}
-    {{ $path := printf "%s %s" .first .last | urlize }}
+    {{ $path := replace (printf "%s %s" (trim .first " ") (trim .last " ")) "." "" | urlize }}
 		<a href="#{{ $path }}">
 			<div class="thumb">
         <img src="/img/{{ $t }}/600/{{ $path }}.jpg" alt="jump to {{ .first }} {{ .last }}">
