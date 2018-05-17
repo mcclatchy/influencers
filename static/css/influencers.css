@@ -236,9 +236,15 @@ transform: translateZ(0);
 	padding: 1rem 0;
 }
 
-@media (max-device-aspect-ratio: 9/16) {
+@media (max-aspect-ratio: 3/4) {
 	.splash {
-		min-height: calc(178vw - 52px);
+		min-height: 75vw;
+	}
+}
+
+@media (max-device-aspect-ratio: 40/71) {
+	.splash {
+		min-height: calc(150vw - 52px);
 	}
 }
 
