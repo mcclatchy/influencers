@@ -58,6 +58,9 @@ body {
 .art {
   position: relative;
   background-color: #ddd;
+	overflow: hidden;
+	/* filter: contrast(25000%); */
+transform: translateZ(0);
 }
 
 .art img {
@@ -65,9 +68,43 @@ body {
   width: 100%;
 }
 
+.art:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+	right: 0;
+
+	background: linear-gradient(190deg, transparent 75%, #0BE6AF);
+
+  /** Lines **/
+  /* background: repeating-linear-gradient(-65deg, #69e2b3, #69e2b3 5px, transparent 5px, transparent 25px); */
+
+  /** Halftone **/
+  /* background-blend-mode: multiply; */
+  /* background: */
+  /*       radial-gradient(8px 8px, cyan, transparent), */
+  /*       radial-gradient(8px 8px, magenta, transparent), */
+  /*       radial-gradient(8px 8px, yellow, transparent); */
+	/* background-size: 8px 8px; */
+	/* background-position: 0 -3px, -2px 0, 2px 0; */
+	/* mix-blend-mode: color; */
+	/* transform: rotate(31.25deg) scale(2); */
+
+	/* filter: contrast(1000%); */
+	/* opacity: .8; */
+}
+
+.influencer:nth-child(5n) .art:after {
+  background-blend-mode: luminosity;
+	mix-blend-mode: color;
+}
+
 @supports (object-fit: cover) {
   .art {
-    height: 70vh;
+    /* height: 70vh; */
+		height: 120vw;
   }
 
   .art img {
@@ -195,13 +232,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  min-height: calc(100vh - 52px);
+	min-height: calc(100vh - 110px);
+	padding: 1rem 0;
 }
 
-@media (min-width: 768px) {
-  .splash {
-    min-height: calc(100vh - 110px);
-  }
+@media (max-device-aspect-ratio: 9/16) {
+	.splash {
+		min-height: calc(178vw - 52px);
+	}
 }
 
 .splash p {
@@ -209,6 +247,7 @@ body {
   max-width: 90%;
   font: 300 18px/1.3em "McClatchy Sans";
   text-align: center;
+	padding: 1rem 0;
 }
 
 .influencer-index {
@@ -296,12 +335,13 @@ body {
   }
 
   .art {
-    height: 40vw;
+    /* height: 40vw; */
+		height: 45vw;
   }
 
-  .art img {
-    position: absolute;
-  }
+  /* .art img { */
+  /*   position: absolute; */
+  /* } */
 
   .bio {
     flex: 1;
@@ -320,7 +360,8 @@ body {
   }
 
   .art {
-    height: 25vw;
+    /* height: 25vw; */
+    height: 30vw;
   }
 
   .influencer:nth-child(3n + 2) {
