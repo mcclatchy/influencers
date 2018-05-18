@@ -76,7 +76,25 @@ transform: translateZ(0);
   bottom: 0;
 	right: 0;
 
-	background: linear-gradient(190deg, transparent 75%, #0BE6AF);
+	background-image: url(../img/diamonds-overlay.png);
+	background-position: 50% 50%;
+	background-size: cover;
+
+	/* Window Shade */
+	background-image: url(../img/window-shade-overlay.png);
+	background-position: bottom right;
+	mix-blend-mode: multiply;
+
+	background-image: url(../img/corner-overlay.png);
+	background-position: left bottom;
+
+	/* background: radial-gradient(50% 55% at 115%, #0BE6AF 100%, transparent 100%); */
+	/* mix-blend-mode: multiply; */
+
+	/* background: linear-gradient(to top right, #0BE6AF, #0BE6AF 15%, transparent 15%, transparent 16%, #0BE6AF 16%, #0BE6AF 18%, transparent 18%, transparent 19%, #0BE6AF 19%, #0BE6AF 20%, transparent 20%, transparent); */
+	/* mix-blend-mode: multiply; */
+
+	/* background: linear-gradient(190deg, transparent 75%, #0BE6AF); */
 
   /** Lines **/
   /* background: repeating-linear-gradient(-65deg, #69e2b3, #69e2b3 5px, transparent 5px, transparent 25px); */
@@ -96,15 +114,31 @@ transform: translateZ(0);
 	/* opacity: .8; */
 }
 
-.influencer:nth-child(5n) .art:after {
-  background-blend-mode: luminosity;
-	mix-blend-mode: color;
+.influencer:nth-of-type(even) .art:after {
+	transform: rotate(180deg);
+}
+
+.influencer:nth-of-type(3n+2) .art:after {
+	/* background: radial-gradient(50% 55% at 115%, #0BE6AF 100%, transparent 100%); */
+	/* mix-blend-mode: multiply; */
+
+	/* background-image: url(../img/half-circle-overlay.png); */
+	/* background-position: right center; */
+	/* mix-blend-mode: multiply; */
+}
+
+.influencer:nth-of-type(3n+3) .art:after {
+	/* background: linear-gradient(to top right, #0BE6AF, #0BE6AF 15%, transparent 15%, transparent 16%, #0BE6AF 16%, #0BE6AF 18%, transparent 18%, transparent 19%, #0BE6AF 19%, #0BE6AF 20%, transparent 20%, transparent); */
+
+	/* background-image: url(../img/corner-overlay.png); */
+	/* background-position: left bottom; */
+	/* opacity: .4; */
 }
 
 @supports (object-fit: cover) {
   .art {
     /* height: 70vh; */
-		height: 120vw;
+		height: 100vw;
   }
 
   .art img {
