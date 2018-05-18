@@ -77,7 +77,14 @@ body {
 	background-image: url(../img/overlays/swoop.png);
 	background-size: cover;
 	background-position: left center;
-	mix-blend-mode: multiply;
+	opacity: .4;
+}
+
+@supports (mix-blend-mode: multiply) {
+	.art:after {
+		opacity: 1;
+		mix-blend-mode: multiply;
+	}
 }
 
 @supports (object-fit: cover) {
@@ -197,10 +204,22 @@ body {
   height: 45px 
 }
 
-.project-flag .index-icon {
+.project-icons {
+	align-self: stretch;
+	display: flex;
+}
+
+.project-icons a {
+	flex: 1;
+	padding: 8px;
+	display: flex;
+	align-items: center;
+}
+
+.project-icons svg {
   fill: white;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 }
 
 .splash {

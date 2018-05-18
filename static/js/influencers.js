@@ -57,4 +57,13 @@
     influencers[i].classList.add("animate-in");
     cardObserver.observe(influencers[i]);
   }
+
+  /**
+   * Social Media
+   */
+
+  let smlinks = document.querySelectorAll(".project-social-link");
+  smlinks.forEach(l => {
+    l.href = l.dataset.href + encodeURIComponent(location.href);
+  });
 })()
