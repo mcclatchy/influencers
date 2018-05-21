@@ -365,6 +365,7 @@ body {
 
   .art {
     height: 30vw;
+		max-height: 360px;
   }
 
   .influencer:nth-child(3n + 2) {
