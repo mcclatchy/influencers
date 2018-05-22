@@ -4,3 +4,4 @@ title = "The Influencer Series"
 
 disableKinds = ["section", "taxonomy", "RSS", "sitemap"]
 relativeURLs = true
+forceSyncStatic = true
