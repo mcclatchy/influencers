@@ -356,14 +356,16 @@ body {
   }
 }
 
+@media (max-width: 1199px) {
+	.influencer:nth-of-type(odd) .art:after {
+		transform: rotate(180deg);
+	}
+}
+
 @media (min-width: 600px) and (max-width: 1199px) {
   .influencer:nth-child(2n) {
     transition-delay: 100ms;
   }
-
-	.influencer:nth-of-type(odd) .art:after {
-		transform: rotate(180deg);
-	}
 }
 
 @media (min-width: 1200px) {
