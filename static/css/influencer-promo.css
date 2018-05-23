@@ -1,0 +1,60 @@
+.influencer-promo {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+}
+
+.influencer-promo .strip {
+  position: relative;
+  height: 175px;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.influencer-promo .strip img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% top;
+}
+
+.influencer-promo h1 {
+  margin: 0;
+  padding: 15px 0 6px;
+  font: 800 50px/1em "McClatchy Sans Cond";
+  text-align: center;
+  border-bottom: 5px solid #0be6af;
+}
+
+.influencer-promo h1 span {
+  display: inline-block;
+}
+
+.influencer-promo h1 .riverdale {
+  color: #0be6af;
+}
+
+.influencer-promo .influencer-logo {
+  display: block;
+  width: 240px;
+  margin: 10px auto;
+}
+
+@media (max-width: 675px) {
+  .influencer-promo .strip {
+    height: 120px;
+  }
+
+  .influencer-promo h1 {
+    font-size: 26px;
+    padding: 8px 0 2px;
+  }
+
+  .influencer-promo .influencer-logo {
+    width: 140px;
+  }
+}

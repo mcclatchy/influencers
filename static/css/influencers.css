@@ -12,7 +12,7 @@ body {
   background-color: #333 !important;
 }
 
-.navbar-toggle {
+.navbar-toggle, #search-icon-sm-md .btn-link {
   background-color: #555 !important;
 }
 
@@ -156,7 +156,15 @@ body {
   margin-top: 1.5em;
   padding-top: 1.5em;
   border-top: 2px solid #333;
-  font: 16px/1.4em "Lyon";
+}
+
+.answer p {
+	font: 16px/22px "Lyon";
+	margin: 0 0 8px;
+}
+
+.answer p:last-child {
+	margin-bottom: 0;
 }
 
 .answer:before {
