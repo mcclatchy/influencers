@@ -1,0 +1,7 @@
+#!/bin/bash
+i=$((RANDOM%10+1))
+
+cp west/$i.jpg west.jpg
+cp midwest/$i.jpg midwest.jpg
+cp carolinas/$i.jpg carolinas.jpg
+cp east/$i.jpg east.jpg

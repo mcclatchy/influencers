@@ -1,0 +1,33 @@
+#!/bin/bash
+mkdir -p tmp
+rm -f west/* midwest/* carolinas/* east/*
+
+regions=('west' 'midwest' 'carolinas' 'east')
+
+for region in ${regions[@]}; do
+  echo "Starting $region region"
+
+  for i in $(seq 1 10); do
+    overlaycounter=0
+    people=$(ls ../img/$region/1200/*.jpg | sort -R | head -n 10)
+
+    for p in $people; do
+      filename=$(basename $p)
+      if [ "$overlaycounter" -lt 5 ]; then
+        convert "../img/overlays/swoop.png" $p -resize 800x -compose Multiply -composite tmp/$filename 
+      else
+        convert "../img/overlays/swoop-r.png" $p -resize 800x -compose Multiply -composite tmp/$filename 
+      fi
+      let overlaycounter+=1
+    done
+
+    cd tmp
+    echo "building $region strip: $i"
+    convert $(basename $people) +append -resize x175 -quality 80 ../$region/$i.jpg
+
+    cd ..
+    rm tmp/*
+  done
+
+  echo
+done
