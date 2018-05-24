@@ -66,4 +66,4 @@
   smlinks.forEach(l => {
     l.href = l.dataset.href + encodeURIComponent(location.href);
   });
-})()
+})();

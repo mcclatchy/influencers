@@ -1,0 +1,20 @@
+<div id="influencer-ad-slot"></div>
+<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+
+  googletag.cmd.push(function() {
+    let influencerAdSizes = googletag.sizeMapping()
+      .addSize([1024, 768], [970,250])
+      .addSize([0,0], [300,250])
+      .build();
+
+    let influencerAdSlots = googletag.defineSlot("{{ . }}", [300,250], "influencer-ad-slot")
+      .defineSizeMapping(influencerAdSizes)
+      .addService(googletag.pubads());
+
+    googletag.enableServices();
+    googletag.display("influencer-ad-slot");
+  });
+</script>

@@ -668,6 +668,10 @@ mi.pageInfo.setConf({
 	<svg width="32" height="32" viewBox="0 0 1792 1792"><path fill="#ffffff" d="M1395 864q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23zm0-384q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"/></svg>
 </div>
 
+{{ if isset .Params "ad" }}
+{{ partial "ad.html" .Params.ad }}
+{{ end }}
+
 <div class="grid">
 	{{ range sort (index .Site.Data .Type) "last" }}
   {{ $path := replace (printf "%s %s" (trim .first " ") (trim .last " ")) "." "" | urlize }}
@@ -721,7 +725,7 @@ mi.pageInfo.setConf({
 </div>
 	
 <script src="/js/intersection-observer.js"></script>
-<script src="/js/influencers.js"></script>
+<script async src="/js/influencers.js"></script>
 
 <!-- end paste code -->
 
