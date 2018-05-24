@@ -256,10 +256,14 @@ body {
 	margin: 2rem 0;
 }
 
-.splash p {
-  width: 600px;
-  max-width: 90%;
-  font: 300 18px/1.3em "McClatchy Sans";
+.project-intro {
+  max-width: 600px;
+	padding: 0 15px;
+	box-sizing: content-box;
+}
+
+.project-intro p {
+  font: 300 17px/1.3em "McClatchy Sans";
   text-align: center;
 }
 
