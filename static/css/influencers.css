@@ -351,12 +351,14 @@ body {
 
 @media (min-width: 600px) {
   .grid {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: 1fr 1fr;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px;
+		padding: 15px;
+
+		/* IE11 */
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
   }
 
   .influencer {
@@ -364,15 +366,37 @@ body {
     flex-direction: column;
     background-color: white;
     box-shadow: 0px 0px 2px #999;
+
+		/* IE11 */
+		margin: 15px;
+		width: 360px;
   }
 
   .art {
-		height: 45vw;
+		height: 360px;
   }
 
   .bio {
     flex: 1;
   }
+
+	@supports (display: grid) {
+		.grid {
+			display: grid;
+			grid-gap: 30px;
+			grid-template-columns: 1fr 1fr;
+			padding: 30px;
+		}
+
+		.influencer {
+			margin: 0;
+			width: auto;
+		}
+
+		.art {
+			height: 45vw;
+		}
+	}
 
 	#influencer-ad-slot {
 		margin-bottom: 0;
