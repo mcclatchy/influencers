@@ -49,8 +49,11 @@
   });
 
   for(let i = 0, len = influencers.length; i < len; i++) {
-    influencers[i].classList.add("animate-in");
-    cardObserver.observe(influencers[i]);
+    let rect = influencers[i].getBoundingClientRect();
+    if(rect.top > 0) {
+      influencers[i].classList.add("animate-in");
+      cardObserver.observe(influencers[i]);
+    }
   }
 
   /**
