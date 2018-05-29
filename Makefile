@@ -1,15 +1,15 @@
 all: carolinas east midwest west
 
-carolinas: carolinas.images
+carolinas: 
 	csv2json markets/$@.csv > data/$@.json
 
-east: east.images
+east: 
 	csv2json markets/$@.csv > data/$@.json
 
-midwest: midwest.images
+midwest: 
 	csv2json markets/$@.csv > data/$@.json
 
-west: west.images
+west: 
 	csv2json markets/$@.csv > data/$@.json
 
 %.images:
