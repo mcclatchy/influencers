@@ -103,6 +103,18 @@ body {
 }
 
 /**
+ * Groups
+ */
+
+.group-label {
+	margin: 0;
+	padding: 30px;
+	text-align: center;
+	font: 800 30px/1em "McClatchy Sans Cond";
+	text-transform: uppercase;
+}
+
+/**
  * Influencers
  */
 
@@ -195,7 +207,7 @@ body {
   color: white;
   transform: translateY(-120px);
   transition: transform 0.5s ease;
-  border-bottom: 3px solid #0be6af;
+  border-bottom: 3px solid #69e2b3;
   box-shadow: 0px 0px 12px black;
 }
 
@@ -265,6 +277,21 @@ body {
 .project-intro p {
   font: 300 17px/1.3em "McClatchy Sans";
   text-align: center;
+}
+
+.group-cloud {
+	padding: 12px;
+	text-align: center;
+}
+
+.group-cloud a {
+	display: inline-block;
+	padding: 12px;
+	color: #999;
+}
+
+.group-cloud a:hover, .group-cloud a:active {
+	color: #69e2b3;
 }
 
 .influencer-index {
@@ -350,6 +377,15 @@ body {
  */
 
 @media (min-width: 600px) {
+	.group-label {
+		padding: 35px 30px 0 0;
+		margin-bottom: -6px;
+	}
+
+	.splash + .group-label {
+		padding-top: 60px;
+	}
+
   .grid {
     max-width: 1200px;
     margin: 0 auto;

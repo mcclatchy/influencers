@@ -13,6 +13,7 @@ for region in ${regions[@]}; do
 
     for p in $people; do
       filename=$(basename $p)
+      # convert $p -resize 800x tmp/$filename
       if [ "$overlaycounter" -lt 5 ]; then
         convert "../img/overlays/swoop.png" $p -resize 800x -compose Multiply -composite tmp/$filename 
       else

@@ -14,26 +14,21 @@
 
   navObserver.observe(influencers[3]);
 
-  // Location change additions
-  
   function handleHashChange() {
     let newTarget = document.querySelector(location.hash);
-    if(newTarget.classList.contains("influencer")) {
-      flag.classList.remove("down");
+    let adjustment = 0;
 
-      if(newTarget.classList.contains("animate-in")) {
-        window.scrollBy(0, -80);
-      }
-
-      setTimeout(function() {
-        window.addEventListener('scroll', handleQuickScroll);
-      }, 100);
+    if(flag.classList.contains("down")) {
+      adjustment -= 57;
     }
-  }
 
-  function handleQuickScroll() {
-    flag.classList.add("down");
-    window.removeEventListener("scroll", handleQuickScroll);
+    if(newTarget.classList.contains("influencer")) {
+      if(newTarget.classList.contains("animate-in")) {
+        adjustment -= 80;
+      }
+    }
+
+    window.scrollBy(0, adjustment)
   }
 
   window.addEventListener("hashchange", handleHashChange);

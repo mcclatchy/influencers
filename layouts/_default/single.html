@@ -649,6 +649,14 @@ mi.pageInfo.setConf({
              <div id="content-body-" class="content-body">
 
 {{ $t := .Type }}
+{{ $people := index .Site.Data .Type }}
+
+<!-- Set the groups -->
+{{ range $people }}
+  {{ $.Scratch.Add $t (slice .group) }}
+{{ end }}
+{{ $groups := uniq ($.Scratch.Get $t) }}
+
 <!-- start paste code -->
 
 <link rel="stylesheet" href="/css/influencers.css">
@@ -665,6 +673,11 @@ mi.pageInfo.setConf({
     </svg>
   </div>
   <div class="project-intro">{{ .Content }}</div>
+  <div class="group-cloud">
+    {{ range sort $groups }}
+    <a href="#{{ urlize . }}">{{ . }}</a>
+    {{ end }}
+  </div>
 	<svg width="32" height="32" viewBox="0 0 1792 1792"><path fill="#ffffff" d="M1395 864q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23zm0-384q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"/></svg>
 </div>
 
@@ -672,27 +685,29 @@ mi.pageInfo.setConf({
 {{ partial "ad.html" .Params.ad }}
 {{ end }}
 
+{{ range sort $groups }}
+<h2 class="group-label" id="{{ urlize . }}">{{ . }}</h2>
 <div class="grid">
-	{{ range sort (index .Site.Data .Type) "last" }}
+  {{ $ppl := sort (where $people "group" .) "last" }}
+  {{ range $ppl }}
   {{ $path := replace (printf "%s %s" (trim .first " ") (trim .last " ")) "." "" | urlize }}
-	<div id="{{ $path }}" class="influencer">
-		<div class="art">
+  <div id="{{ $path }}" class="influencer">
+    <div class="art">
       <img src="/img/{{ $t }}/600/{{ $path }}.jpg"
         srcset="/img/{{ $t }}/1200/{{ $path }}.jpg 2x"
-				alt="{{ .first }} {{ .last }}">
-		</div>
-		<div class="bio">
+        alt="{{ .first }} {{ .last }}">
+    </div>
+    <div class="bio">
       <h1 class="name">{{ .first }} {{ .last }}</h1>
-			<div class="title">{{ .title | markdownify }}</div>
-			<!-- <div class="answer">{{ .answer | markdownify }}</div> -->
-			<div class="answer">{{ partial "markdownify-block" .answer }}</div>
-		</div>
-	</div>
-	{{ end }}
+      <div class="title">{{ .title | markdownify }}</div>
+      <div class="answer">{{ partial "markdownify-block" .answer }}</div>
+    </div>
+  </div>
+  {{ end }}
 </div>
+{{ end }}
 
 <div class="influencer-index" id="influencer-index">
-	<h1></h1>
 	<div class="columns">
 		{{ range sort (index .Site.Data .Type) "last" }}
     {{ $path := replace (printf "%s %s" (trim .first " ") (trim .last " ")) "." "" | urlize }}
