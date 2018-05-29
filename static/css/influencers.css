@@ -265,7 +265,7 @@ body {
 }
 
 .splash > * {
-	margin: 2rem 0;
+	margin: 1.25rem 0;
 }
 
 .project-intro {
@@ -275,18 +275,22 @@ body {
 }
 
 .project-intro p {
-  font: 300 17px/1.3em "McClatchy Sans";
+  font: 300 14px/1.4em "McClatchy Sans";
   text-align: center;
+	margin: 0 10px 20px;
+}
+
+.project-intro .influencer-question {
+	font: 500 24px/1.3em "McClatchy Sans Cond";
 }
 
 .group-cloud {
-	padding: 12px;
 	text-align: center;
 }
 
 .group-cloud a {
 	display: inline-block;
-	padding: 12px;
+	padding: 4px 12px;
 	color: #999;
 }
 
@@ -377,6 +381,10 @@ body {
  */
 
 @media (min-width: 600px) {
+	.project-intro p {
+		font-size: 16px;
+	}
+
 	.group-label {
 		padding: 35px 30px 0 0;
 	}
