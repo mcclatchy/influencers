@@ -19,7 +19,7 @@
     let adjustment = 0;
 
     if(flag.classList.contains("down")) {
-      adjustment -= 57;
+      adjustment -= 60;
     }
 
     if(newTarget.classList.contains("influencer")) {
