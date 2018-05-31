@@ -47,6 +47,10 @@ body {
   margin-bottom: 40px;
 }
 
+.content-body > p {
+	display: none;
+}
+
 #footer {
   margin-top: 0;
 }
