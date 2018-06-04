@@ -3,11 +3,16 @@
   color: inherit;
   text-decoration: none;
   width: 100%;
+  margin-bottom: 20px;
+}
+
+.influencer-promo:hover {
+  color: inherit;
 }
 
 .influencer-promo .strip {
   position: relative;
-  height: 175px;
+  height: 145px;
   overflow: hidden;
   max-width: 100%;
 }
@@ -26,7 +31,7 @@
 .influencer-promo h1 {
   margin: 0;
   padding: 15px 0 6px;
-  font: 800 50px/1em "McClatchy Sans Cond";
+  font: 800 45px/1em "McClatchy Sans Cond";
   text-align: center;
   border-bottom: 5px solid #0be6af;
 }

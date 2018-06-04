@@ -23,60 +23,57 @@
       }
     </style>
 
-    <link rel="stylesheet" href="../css/influencer-promo.css">
   </head>
 
   <body>
     <h2>West</h2>
-    <a class="influencer-promo" href="#">
-      <div class="strip">
-        <img src="https://media.kansascity.com/influencers/promo/west.jpg" 
-          data-src="https://media.kansascity.com/influencers/promo/west/X.jpg">
-      </div>
-      <h1><span>60</span> <span class="riverdale">LEADING VOICES</span> <span>FOR A BETTER CALIFORNIA</span></h1>
-      <img class="influencer-logo" src="influencer-logo-generic.svg">
-    </a>
+<a class="influencer-promo" href="#">
+  <div class="strip">
+    <img src="https://media.kansascity.com/influencers/promo/west.jpg" 
+      data-src="https://media.kansascity.com/influencers/promo/west/X.jpg">
+  </div>
+  <h1><span>MEET 60</span> <span class="riverdale">LEADING VOICES</span> <span>FOR A BETTER CALIFORNIA</span></h1>
+  <img class="influencer-logo" src="https://media.kansascity.com/influencers/promo/influencer-logo-generic.svg">
+</a>
 
     <h2>Midwest</h2>
-    <a class="influencer-promo" href="#">
-      <div class="strip">
-        <img src="https://media.kansascity.com/influencers/promo/midwest.jpg" 
-          data-src="https://media.kansascity.com/influencers/promo/midwest/X.jpg">
-      </div>
-      <h1><span>50</span> <span class="riverdale">LEADING VOICES</span> <span>FOR A BETTER MISSOURI</span></h1>
-      <img class="influencer-logo" src="influencer-logo-generic.svg">
-    </a>
+<a class="influencer-promo" href="#">
+  <div class="strip">
+    <img src="https://media.kansascity.com/influencers/promo/midwest.jpg" 
+      data-src="https://media.kansascity.com/influencers/promo/midwest/X.jpg">
+  </div>
+  <h1><span>MEET 50</span> <span class="riverdale">LEADING VOICES</span> <span>FOR A BETTER MISSOURI</span></h1>
+  <img class="influencer-logo" src="https://media.kansascity.com/influencers/promo/influencer-logo-generic.svg">
+</a>
 
     <h2>Carolinas</h2>
-    <a class="influencer-promo" href="#">
-      <div class="strip">
-        <img src="https://media.kansascity.com/influencers/promo/carolinas.jpg" 
-          data-src="https://media.kansascity.com/influencers/promo/carolinas/X.jpg">
-      </div>
-      <h1><span>60</span> <span class="riverdale">LEADING VOICES</span> <span>FOR A BETTER NORTH CAROLINA</span></h1>
-      <img class="influencer-logo" src="influencer-logo-generic.svg">
-    </a>
+<a class="influencer-promo" href="#">
+  <div class="strip">
+    <img src="https://media.kansascity.com/influencers/promo/carolinas.jpg" 
+      data-src="https://media.kansascity.com/influencers/promo/carolinas/X.jpg">
+  </div>
+  <h1><span>MEET 60</span> <span class="riverdale">LEADING VOICES</span> <span>FOR A BETTER NORTH CAROLINA</span></h1>
+  <img class="influencer-logo" src="https://media.kansascity.com/influencers/promo/influencer-logo-generic.svg">
+</a>
 
     <h2>East</h2>
-    <a class="influencer-promo" href="#">
-      <div class="strip">
-        <img src="https://media.kansascity.com/influencers/promo/east.jpg" 
-          data-src="https://media.kansascity.com/influencers/promo/east/X.jpg">
-      </div>
-      <h1><span>50</span> <span class="riverdale">LEADING VOICES</span> <span>FOR A BETTER FLORIDA</span></h1>
-      <img class="influencer-logo" src="influencer-logo-generic.svg">
-    </a>
+<a class="influencer-promo" href="#">
+  <div class="strip">
+    <img src="https://media.kansascity.com/influencers/promo/east.jpg" 
+      data-src="https://media.kansascity.com/influencers/promo/east/X.jpg">
+  </div>
+  <h1><span>MEET 50</span> <span class="riverdale">LEADING VOICES</span> <span>FOR A BETTER FLORIDA</span></h1>
+  <img class="influencer-logo" src="https://media.kansascity.com/influencers/promo/influencer-logo-generic.svg">
+</a>
 
-    <script>
-      (function(d) {
-        let strips = d.querySelectorAll(".influencer-promo img[data-src]");
-        let i = Math.floor(Math.random() * 10 + 1);
-        strips.forEach(function(s) {
-          console.log(s);
-          s.src = s.dataset["src"].replace("X", i);
-        })
-      })(document)
-    </script>
+<link rel="stylesheet" href="https://media.kansascity.com/influencers/css/influencer-promo.css">
+<script>
+  (function(d) {
+    let img = d.querySelector(".influencer-promo img[data-src]");
+    let i = Math.floor(Math.random() * 10 + 1);
+    img.src = img.dataset["src"].replace("X", i);
+  })(document)
+</script>
 
   </body>
 </html>
