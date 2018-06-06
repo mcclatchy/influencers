@@ -427,10 +427,6 @@ body {
 		height: 360px;
   }
 
-  .bio {
-    flex: 1;
-  }
-
 	@supports (display: grid) {
 		.grid {
 			display: grid;
