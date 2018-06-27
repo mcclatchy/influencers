@@ -50,6 +50,27 @@
   margin: 10px auto;
 }
 
+/**
+ * Topic addition
+ */
+
+.influencer-topic { 
+  background-color: black; 
+  padding-bottom: 0px; 
+}
+
+.influencer-topic h1 { 
+  color: white; 
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.influencer-topic .influencer-logo { 
+  margin: 0 auto; 
+  padding: 8px 0; 
+  width: 170px; 
+}
+
 @media (max-width: 675px) {
   .influencer-promo .strip {
     height: 120px;
@@ -62,6 +83,10 @@
 
   .influencer-promo .influencer-logo {
     width: 140px;
+  }
+
+  .influencer-topic h1 {
+    font-size: 26px;
   }
 }
 
